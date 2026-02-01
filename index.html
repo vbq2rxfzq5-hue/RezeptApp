@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Strict Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'none';
+        script-src 'self';
+        style-src 'self';
+        img-src 'self' data: blob:;
+        font-src 'self';
+        connect-src 'self';
+        manifest-src 'self';
+        base-uri 'self';
+        form-action 'none';
+        frame-ancestors 'none';
+        upgrade-insecure-requests;
+    ">
+    
+    <!-- Additional Security Headers via Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(self)">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Meine Rezepte">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="Sichere Rezept- und Einkaufslisten-App">
+    
+    <title>Meine Rezepte</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bottom-nav" role="navigation" aria-label="Hauptnavigation">
+        <button class="nav-btn active" data-view="recipes" type="button" aria-label="Rezepte anzeigen">
+            <span class="nav-icon" aria-hidden="true">📖</span>
+            <span class="nav-label">Rezepte</span>
+        </button>
+        <button class="nav-btn" data-view="shopping" type="button" aria-label="Einkaufsliste anzeigen">
+            <span class="nav-icon" aria-hidden="true">🛒</span>
+            <span class="nav-label">Einkaufen</span>
+        </button>
+        <button class="nav-btn" data-view="archive" type="button" aria-label="Archiv anzeigen">
+            <span class="nav-icon" aria-hidden="true">📊</span>
+            <span class="nav-label">Archiv</span>
+        </button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="app-container" role="main"></main>
+
+    <!-- Modal Container -->
+    <div id="modal-container" role="dialog" aria-modal="true" aria-hidden="true"></div>
+
+    <!-- Scripts - No inline scripts, strict CSP compliance -->
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/validator.js"></script>
+    <script type="module" src="js/sanitizer.js"></script>
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/dom-builder.js"></script>
+    <script type="module" src="js/recipe-helpers.js"></script>
+    <script type="module" src="js/views/recipe-list.js"></script>
+    <script type="module" src="js/views/recipe-detail.js"></script>
+    <script type="module" src="js/views/recipe-form.js"></script>
+    <script type="module" src="js/views/recipe-edit.js"></script>
+    <script type="module" src="js/views/shopping-list.js"></script>
+    <script type="module" src="js/views/recipe-select.js"></script>
+    <script type="module" src="js/views/fridge-check.js"></script>
+    <script type="module" src="js/views/archive-list.js"></script>
+    <script type="module" src="js/views/archive-create.js"></script>
+    <script type="module" src="js/views/archive-detail.js"></script>
+    <script type="module" src="js/router.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

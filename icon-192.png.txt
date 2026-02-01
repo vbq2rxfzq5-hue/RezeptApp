@@ -1,0 +1,8 @@
+Platzhalter für App-Icon (192x192 px)
+
+Du kannst hier ein eigenes Icon hochladen oder eines erstellen auf:
+- https://www.favicon-generator.org/
+- https://realfavicongenerator.net/
+
+Für jetzt funktioniert die App auch ohne Icon.
+Die Icons werden automatisch vom Browser generiert.
